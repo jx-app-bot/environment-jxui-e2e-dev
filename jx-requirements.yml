@@ -1,17 +1,22 @@
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  project: ""
+  clusterName: jxui-e2e
+  environmentGitOwner: jx-app-bot
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: jenkins-x-demo-238815
   provider: gke
-  zone: ""
-gitops: true
+  zone: europe-west1-c
 environments:
 - key: dev
 - key: staging
 - key: production
+gitops: true
 ingress:
-  domain: ""
+  domain: 34.77.182.98.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
@@ -21,13 +26,13 @@ secretStorage: vault
 storage:
   logs:
     enabled: true
-    url: ""
+    url: gs://jxui-e2e-logs-55fcb996-647d-40db-88ca-48651e70c139
   reports:
     enabled: true
-    url: ""
+    url: gs://jxui-e2e-reports-96949aec-7a8c-4675-8883-53ed015b73a4
   repository:
     enabled: true
-    url: ""
+    url: gs://jxui-e2e-repository-23543ee0-5cc4-46ac-bce3-1fb709d0dbe
 versionStream:
   ref: master
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
